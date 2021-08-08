@@ -1,0 +1,366 @@
+@charset "UTF-8";
+
+/*----- variables ----- */
+
+/* ========== FONTS ========== */
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("../fonts/IBMPlexMono/Ibmplexmono-Bold.eot");
+  src: local("☺"), url("../fonts/IBMPlexMono/Ibmplexmono-Bold.woff") format("woff"), url("../fonts/IBMPlexMono/Ibmplexmono-Bold.woff2") format("woff2"), url("../fonts/IBMPlexMono/Ibmplexmono-Bold.ttf") format("truetype"), url("../fonts/IBMPlexMono/Ibmplexsans-Bold.svg") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("../fonts/IBMPlexMono/Ibmplexsans-Regular.eot");
+  src: local("☺"), url("../fonts/IBMPlexSans/Ibmplexsans-Regular.woff") format("woff"), url("../fonts/IBMPlexMono/Ibmplexsans-Regular.woff2") format("woff2"), url("../fonts/IBMPlexMono/Ibmplexsans-Regular.ttf") format("truetype"), url("../fonts/IBMPlexSans/Ibmplexsans-Regular.svg") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("../fonts/IBMPlexSans/Ibmplexsans-Meduim.eot");
+  src: local("☺"), url("../fonts/IBMPlexSans/Ibmplexsans-Meduim.woff") format("woff"), url("../fonts/IBMPlexSans/Ibmplexsans-Meduim.woff2") format("woff2"), url("../fonts/IBMPlexSans/Ibmplexsans-Meduim.ttf") format("truetype"), url("../fonts/IBMPlexSans/Ibmplexsans-Meduim.svg") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("../fonts/IBMPlexSans/Ibmplexsans-Semibold.eot");
+  src: local("☺"), url("../fonts/IBMPlexSans/Ibmplexsans-Semibold.woff") format("woff"), url("../fonts/IBMPlexSans/Ibmplexsans-Semibold.woff2") format("woff2"), url("../fonts/IBMPlexSans/Ibmplexsans-Semibold.ttf") format("truetype"), url("../fonts/IBMPlexSans/Ibmplexsans-Semibold.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* ========== обнуляющий стиль + оболочка ========== */
+
+/* ========== NULL ========== */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside,
+section {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+  background-color: #181036;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a {
+  color: #ffffff;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* ========== ОСНОВНАЯ СЕТКА ========== */
+
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+/* ========== ОСНОВНОЙ БЛОК ========== */
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* ========== HEADER ========== */
+
+/*
+body.lock{
+   overflow: hidden
+}
+
+.burger {
+   display: none;
+}
+
+@media (max-width: 768px) {
+   .burger {
+      width: 30px;
+      height: 20px;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+      ::before {
+         content: "";
+         position: absolute;
+         left: 0px;
+         top: 0px;
+         background-color: #fff;
+         width: 100%;
+         height: 2px;
+         border-radius: 1px;
+         transition: transform 0.2s;
+      }
+      span {
+         width: 100%;
+         height: 2px;
+         background-color: #fff;
+         border-radius: 1px;
+         transition: width 0.1s;
+      }
+      ::after {
+         content: "";
+         position: absolute;
+         left: 0px;
+         bottom: 0px;
+         background-color: #fff;
+         width: 100%;
+         height: 2px;
+         border-radius: 1px;
+         transition: transform 0.2s;
+      }
+   }
+
+   .burger.active {
+      ::before {
+         transform: rotate(45deg);
+         top: 9px;
+      }
+      span {
+         width: 0;
+         height: 0;
+      }
+      ::after {
+         transform: rotate(-45deg);
+         bottom: 9px;
+      }
+   }
+
+   .menu-list {
+      position: fixed;
+      top: -100%;
+      padding: 0px 0px 0px 50px;
+      transition: top 0.1s;
+      &__item {
+      }
+
+      &__link {
+      }
+   }
+
+   .menu-list.active {
+      top: 0;
+   }
+}
+*/
+
+.header {
+  padding: 20px 0;
+}
+
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav__list-item + .nav__list-item {
+  padding-left: 24px;
+}
+
+.nav__link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.67;
+  color: #9ca3c4;
+  transition: color 0.4s linear;
+  -webkit-transition: color 0.4s linear;
+  -moz-transition: color 0.4s linear;
+  -ms-transition: color 0.4s linear;
+  -o-transition: color 0.4s linear;
+}
+
+.nav__link:hover {
+  color: #fff;
+}
+
+.buy-token-link {
+  position: relative;
+  padding: 10px 36px 10px 16px;
+  background: #ffca36;
+  border-radius: 8px;
+  color: #0c0e12;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.54px;
+}
+
+.buy-token-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background-image: url(../img/icons/arrow-icon.svg);
+  bottom: 10px;
+  right: 16px;
+}
+
+.hero {
+  padding-top: 220px;
+}
+
+.hero__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 1100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.hero__title span {
+  background-image: url(../img/outline/first.svg);
+}
+
+.hero__subtitle {
+  padding-top: 65px;
+  padding-bottom: 31px;
+  max-width: 764px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #9ca3c4;
+  margin: 0 auto;
+}
+
+/* ========== MAIN ========== */
+
+/* ========== FOOTER ========== */
